@@ -55,3 +55,23 @@ class SquareAndCircle(Scene):
         square.next_to(circle, RIGHT, buff=0.5)
         # Show the shapes on the screen
         self.play(Create(circle), Create(square))
+
+
+class AnimatedSquareToCircle(Scene):
+    """A scene to animate modification to an `Mobject`."""
+
+    def construct(self):
+        circle = Circle()
+        square = Square()
+
+        self.play(Create(square))
+
+        # When you prepend `.animate` to any method call that modifies a
+        # `Mobject`, the method becomes an animation playable using `self.play`.
+        self.play(square.animate.rotate(PI / 4))
+
+        # Transform the square to a circle
+        self.play(ReplacementTransform(square, circle))
+
+        # Color the circle on screen
+        self.play(circle.animate.set_fill(PINK, opacity=0.5))
