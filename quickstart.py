@@ -1,6 +1,8 @@
 """This module displays a circle on screen.
 
 Run this module using the command `manim -pql scene.py CreateCircle`.
+Visit https://docs.manim.community/en/stable/tutorials/quickstart.html for a
+quickstart tutorial for `manim`.
 """
 
 # This is the recommended way of using Manim, as a single script often uses
@@ -79,6 +81,7 @@ class AnimatedSquareToCircle(Scene):
 
 class DifferentRotations(Scene):
     """A scene class to animate rotation."""
+
     def construct(self):
         left_square = Square(color=BLUE, fill_opacity=0.7).shift(2 * LEFT)
         right_square = Square(color=GREEN, fill_opacity=0.7).shift(2 * RIGHT)
