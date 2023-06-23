@@ -1,5 +1,7 @@
 tmp/
 .venv/
+media/
+__pycache__
 
 tmp.*
 *.tmp
