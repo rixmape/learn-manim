@@ -21,3 +21,23 @@ class CreateCircle(Scene):
         circle = Circle()  # Create a circle
         circle.set_fill(PINK, opacity=0.5)  # Set the color and transparency
         self.play(Create(circle))  # Show the circle on screen
+
+
+class SquareToCircle(Scene):
+    """A scene class to create and display an animation showing a square
+    transforming to a circle.
+    """
+
+    def construct(self):
+        circle = Circle()
+        circle.set_fill(PINK, opacity=0.5)
+
+        square = Square()
+        square.rotate(PI / 4)  # Rotate square by a certain amount
+
+        # Animate the creation of a square
+        self.play(Create(square))
+        # Interpolate the square into circle
+        self.play(Transform(square, circle))
+        # Fade out animation at the end
+        self.play(FadeOut(square))
