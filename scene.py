@@ -24,9 +24,7 @@ class CreateCircle(Scene):
 
 
 class SquareToCircle(Scene):
-    """A scene class to create and display an animation showing a square
-    transforming to a circle.
-    """
+    """A scene class to show a square transforming to a circle."""
 
     def construct(self):
         circle = Circle()
@@ -41,3 +39,19 @@ class SquareToCircle(Scene):
         self.play(Transform(square, circle))
         # Fade out animation at the end
         self.play(FadeOut(square))
+
+
+class SquareAndCircle(Scene):
+    """A scene class to show relative positioning with `Mobject` instances."""
+
+    def construct(self):
+        circle = Circle()
+        circle.set_fill(PINK, opacity=0.5)
+
+        square = Square()
+        square.set_fill(BLUE, opacity=0.5)
+
+        # Place the squre relative to the circle
+        square.next_to(circle, RIGHT, buff=0.5)
+        # Show the shapes on the screen
+        self.play(Create(circle), Create(square))
